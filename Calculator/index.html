@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
 
+const root = document.getElementById("root");
+
+
+function MinutesToHours(){
+    const [amount, setAmount] = React.useState(0);
+    const [inverted, setInverted] = React.useState(false);
+    const onChange = (event) =>{
+        setAmount(event.target.value);
+    };
+    const reset = () => setAmount(0); //값을 0으로 돌려준다.
+    const onInvert = () => {
+        reset(); //Invert 누를 때마다 값 바뀌지 않게
+        setInverted((current) => !current);
+        //만약 onInvert을 실행시킬 때 inverted가 true라면 flase를 반환
+        //만약 onInvert을 실행시킬 때 inverted가 false라면 true를 반환
+    };
+
+
+    return (
+    
+     <div class="divBox">
+        <div class="converterBox">
+            <div>
+                <label htmlFor="minutes">Minutes</label>
+                <input 
+                 value={inverted ? amount*60 : amount}
+                 id="minutes" 
+                 placeholder="Minutes" 
+                 type="number"
+                 onChange={onChange}
+                 disabled={inverted === true} // inverted가 true가 되었을 때 막힌다.
+                // disabled = {inverted} 로도 쓸 수 있다.
+                />
+            </div>
+
+            <div>
+              <label htmlFor="hours">Hours</label>
+              <input 
+              value={inverted ? amount : (amount%60 === 0 ? amount/60 : (amount/60).toFixed(1))}
+              id="hours" 
+              placeholder="Hours" 
+              type="number"
+              disabled={inverted === false} // inverted가 false가 되었을 때 막힌다.
+              // disabled = {!inverted} 로도 쓸 수 있다.
+              onChange={onChange}
+              />
+            </div>
+        </div>
+       <div class="btnBox">
+        <button onClick={reset}>Reset</button>
+        <button onClick={onInvert}>
+        {inverted ? "Turn back" : "Invert"}</button>
+       </div>
+    </div>
+    );
+}
+
+function KmToMiles(){
+    const [amount, setAmount] = React.useState(0);
+    const [inverted, setInverted] = React.useState(false);
+    const onChange = (event) =>{
+        setAmount(event.target.value);
+    };
+    const reset = () => setAmount(0); //값을 0으로 돌려준다.
+    const onInvert = () => {
+        reset(); //Invert 누를 때마다 값 바뀌지 않게
+        setInverted((current) => !current);
+        //만약 onInvert을 실행시킬 때 inverted가 true라면 flase를 반환
+        //만약 onInvert을 실행시킬 때 inverted가 false라면 true를 반환
+    };
+
+
+    return (
+
+    <div class="divBox">
+        <div class="converterBox">
+            <div>
+                <label htmlFor="kms">Km</label>
+                <input 
+                value={inverted ? (amount/0.621371).toFixed(2) : amount}
+                id="kms" 
+                placeholder="Km" 
+                type="number"
+                onChange={onChange}
+                disabled={inverted === true} // inverted가 true가 되었을 때 막힌다.
+                // disabled = {inverted} 로도 쓸 수 있다.
+                />
+            </div>
+
+            <div>
+                <label htmlFor="miles">Miles</label>
+                <input 
+                value={inverted ? amount : (amount*0.621371).toFixed(2)}
+                id="miles" 
+                placeholder="Miles" 
+                type="number"
+                disabled={inverted === false} // inverted가 false가 되었을 때 막힌다.
+                // disabled = {!inverted} 로도 쓸 수 있다.
+                onChange={onChange}
+                 />
+            </div>
+        </div>
+       <div class="btnBox">
+        <button onClick={reset}>Reset</button>
+        <button onClick={onInvert}>
+        {inverted ? "Turn back" : "Invert"}</button>
+       </div>
+    </div>
+    
+    );
+}
+
+function CmToInches(){
+    const [amount, setAmount] = React.useState(0);
+    const [inverted, setInverted] = React.useState(false);
+    const onChange = (event) =>{
+        setAmount(event.target.value);
+    };
+    const reset = () => setAmount(0); //값을 0으로 돌려준다.
+    const onInvert = () => {
+        reset(); //Invert 누를 때마다 값 바뀌지 않게
+        setInverted((current) => !current);
+        //만약 onInvert을 실행시킬 때 inverted가 true라면 flase를 반환
+        //만약 onInvert을 실행시킬 때 inverted가 false라면 true를 반환
+    };
+
+
+    return (
+    <div class="divBox">
+        <div class="converterBox">
+            <div>
+                <label htmlFor="cms">cm</label>
+                <input 
+                value={inverted ? (amount/0.393701).toFixed(2) : amount}
+                id="cms" 
+                placeholder="cm" 
+                type="number"
+                onChange={onChange}
+                disabled={inverted === true} // inverted가 true가 되었을 때 막힌다.
+                // disabled = {inverted} 로도 쓸 수 있다.
+                />
+            </div>
+
+            <div>
+                <label htmlFor="Inches">Inch</label>
+                <input 
+                value={inverted ? amount : (amount*0.393701).toFixed(2)}
+                id="inches" 
+                placeholder="Inches" 
+                type="number"
+                disabled={inverted === false} // inverted가 false가 되었을 때 막힌다.
+                // disabled = {!inverted} 로도 쓸 수 있다.
+                onChange={onChange}
+                />
+            </div>
+        </div>
+       <div class="btnBox">
+        <button onClick={reset}>Reset</button>
+        <button onClick={onInvert}>
+        {inverted ? "Turn back" : "Invert"}</button>
+       </div>
+    </div>   
+    );
+}
+
+function MmToPy(){
+    const [amount, setAmount] = React.useState(0);
+    const [inverted, setInverted] = React.useState(false);
+    const onChange = (event) =>{
+        setAmount(event.target.value);
+    };
+    const reset = () => setAmount(0); //값을 0으로 돌려준다.
+    const onInvert = () => {
+        reset(); //Invert 누를 때마다 값 바뀌지 않게
+        setInverted((current) => !current);
+        //만약 onInvert을 실행시킬 때 inverted가 true라면 flase를 반환
+        //만약 onInvert을 실행시킬 때 inverted가 false라면 true를 반환
+    };
+
+
+    return (
+    <div class="divBox">
+        <div class="converterBox">
+            <div>
+                <label htmlFor="mms">㎡</label>
+                <input 
+                value={inverted ? (amount/0.3025).toFixed(2) : amount}
+                id="mms" 
+                placeholder="㎡" 
+                type="number"
+                onChange={onChange}
+                disabled={inverted === true} // inverted가 true가 되었을 때 막힌다.
+                // disabled = {inverted} 로도 쓸 수 있다.
+                />
+            </div>
+
+            <div>
+                <label htmlFor="py">평</label>
+                <input 
+                value={inverted ? amount : (amount*0.3025).toFixed(2)}
+                id="py" 
+                placeholder="평" 
+                type="number"
+                disabled={inverted === false} // inverted가 false가 되었을 때 막힌다.
+                // disabled = {!inverted} 로도 쓸 수 있다.
+                onChange={onChange}
+                />
+            </div>
+        </div>
+        <div class="btnBox">
+        <button onClick={reset}>Reset</button>
+        <button onClick={onInvert}>
+        {inverted ? "Turn back" : "Invert"}</button>
+       </div>
+    </div>   
+    );
+}
+
+function App(){
+    const [index, setIndex] = React.useState("xx");
+    const onSelect = (event) => {
+        setIndex(event.target.value);
+    }
+    return (
+    <div id="container">
+        <h1>SO EASY CALCULATOR</h1>
+         <select value={index} onChange={onSelect}> {/*select도 혹시 수정할 수 있으니까 value를 줌*/}
+            <option value="xx">Select your units</option>
+            <option value ="0"> Minutes & Hours </option>
+            <option value ="1"> Km & Hours </option>
+            <option value ="2"> cm & Inches </option>
+            <option value ="3"> ㎡ & 평 </option>
+         </select>
+    
+        {/*<hr /> 한 줄 그어주기*/}
+        {/*중괄호를 열면 js 코드를 쓸 수 있다!*/}
+        {index === "xx" ? "Please select your units" : null}
+        {index === "0" ? <MinutesToHours /> : null}
+        {index === "1" ? <KmToMiles /> : null}
+        {index === "2" ? <CmToInches /> : null}
+        {index === "3" ? <MmToPy /> : null}
+    </div>
+    );
+}
+
+
+   ReactDOM.render(<App />, root);
+
+</script>
+</html>
