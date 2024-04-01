@@ -1,1 +1,64 @@
 
+body {
+    color: crimson;
+    background-color:darkgreen;
+    margin: auto; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 
+     0.5px 0.5px 0 #000;
+}
+
+
+
+.title {
+    font-size: 45px;
+}
+   
+.generate {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.guess{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.winnerBox{
+    display: flex;
+    color: khaki;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.generateBox{
+    display: flex;
+    justify-content:baseline;
+    margin-bottom: 20px;
+}
+
+.guessBox{
+    display: flex;
+    justify-content:baseline;
+    margin-bottom: 7px;
+}
+
+.resultBox{
+    display: flex;
+    justify-content:baseline;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.outcomeBox{
+    display: flex;
+    justify-content:baseline;
+    margin-bottom: 7px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.hidden{
+    display: none;
+}
