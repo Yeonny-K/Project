@@ -17,4 +17,17 @@
  <br />
  - And you can know how many attempts you've made until you get it right.
 
+ <h4> Casino-v2 : v2 of Casino </h4>
+ [Additional function]
+ <br />
+ - If it is the first attempts, you can know that you are first challenger.
+ <br />
+ - If the number you have chosen is equal with random number and If your attmept count is lower than current champion's attempt count, then YOU ARE CHAMPION! Champion's attempt count to be renewed as your attempt count.
+ <br />
+ - If the number you have chosen is equal with random number and If your attmept count is greater than current champion's attempt count, then you only win the game and you can know how many attempts you've made until you get it right.
+ <br />
+ - The design has been changed to be a bit more casino style 😂
+
+
+
 
