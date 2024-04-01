@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Welcome to Casino</title>
+</head>
+<body>
+    <h1 class="title">Random Number Game</h1>
+    <div id="winnerZone" class="winnerBox">
+        <span></span>
+    </div>
+    <div class="generateBox">
+        <label class="generate">Generate a number between 0 and</label>
+        <form id="limit">
+            <input type="text" required>
+        </form>
+    </div>
+
+    <div class="guessBox">
+        <label class="guess">Guess the number:</label>
+        <form id="guessNumber">
+            <input type="number" required>
+            <input type="submit" value="Play!">
+        </form>
+    </div>
+
+    <div id="result" class="hidden">
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="outcom" class="hidden">
+        <span></span>
+        <span></span>
+    </div>
+    
+</body>
+<script src="js/casino.js"></script>
+</html>
