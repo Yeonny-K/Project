@@ -1,6 +1,19 @@
 <div align=center><h3>🐬 This repository contains my projects.</h3></div>
 <br />
 <br />
+<h4> 💎 CapitalJ-v2 : (24.4.7.) v2 of CapitalJ (To-Do-List)</h4>
+[Link] : https://capitalj-v2.netlify.app/
+<br />
+ [Additional function]
+ <br />
+ - Management by Monthly / Weekly / Today.
+ <br />
+ - Pressing the thumbtack button moves the list items you want to keep fixed to the Fix section.
+ <br />
+ - Day of the week display and greeting message modification.
+ <br />
+ - Various CSS modifications, etc.
+    
 <h4> 💎 CapitalJ-v1 : (24.4.2.) v1 of CapitalJ (To-Do-List)</h4>
 - Display current date, time, weather / temperature, location.
 <br />
